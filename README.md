@@ -5,7 +5,7 @@
 * Code Linting (ESLint, airbnb style guide)
 * CommonJs
 * Webpack
-* Ract
+* Babel
 * React, Flux and ASP.Net API
 
 ## Presentation (this is the original presentation)
