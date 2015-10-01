@@ -1,7 +1,7 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var CharacterConstants = require('../constants/CharacterConstants');
-import assign from 'object-assign';
+var assign = require('object-assign');
 
 var CHANGE_EVENT = 'change';
 var _characters = {};
@@ -47,3 +47,4 @@ AppDispatcher.register(function(payload) {
 });
 
 module.exports = CharacterStore;
+

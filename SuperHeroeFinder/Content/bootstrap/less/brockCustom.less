@@ -1,0 +1,2250 @@
+﻿// Colours to control the rounded boxes
+@border_colour: #8399A9;
+@background_highlight: #F1F1F1;
+@background_nohighlight: #FFFFFF;
+@background_disabled: #FCFCFC;
+@background_borderless_highlight: #F4F5F6;
+
+// Radius of the rounded corners
+@rounded_radius: 5px;
+
+// General style colours
+@page_background: #FFFFFF;
+@textbox_border: #7F9DB9;
+@link_colour: #005D87;
+@menu_link_colour: #0060A6;
+@instruction_colour: #FFF9D7;
+@success_colour: #00CC00;
+@header_colour: #005D87;
+@result_header: #FFFFFF;
+@result_header_border: #D1D2D4;
+@blue_border_colour: #8098A7;
+@disabled_colour: #C1CDCD;
+@disabled_link_colour: #99B3BF;
+@static_table_header_colour: #B9CCDA;
+
+// Switch colours
+@switch_selected_font_colour: #FFFFFF;
+@switch_unselected_font_colour: #000000;
+
+// Watermark Colours
+@watermark_color: #999999;
+
+// Cluetip Colours
+@cluetip_background: #E3E882;
+
+// DataTable Colours
+@datatable_hover_background: #FFF8D7;
+
+// Statistics Table Colours
+@statistics_header_background: @static_table_header_colour;
+@statistics_header_font_colour: Black;
+@statistics_border_colour: @border_colour;
+@statistics_disabled_colour: @background_highlight;
+
+// Autocomplete Colours
+@autocomplete_highlight_background_color: @background_highlight;
+@autocomplete_highlight_font_color: #000000;
+
+// User Message Control Colours
+@messageLeftBorder: 6px;
+
+
+@highlightBackground: #f4f5f6;
+
+#ContentDiv
+{
+  margin-top: 10px;
+}
+
+#footer
+{
+  clear:both;
+}
+
+//////// Regular Corners /////////
+
+.rectangle {
+  border: 1px solid @border_colour;
+  padding: 5px;
+  margin: 6px 0px 6px 0px;
+  background: @background_nohighlight;
+}
+
+.rectangleHighlight {
+  .rectangle;
+  background: @background_highlight;
+}
+
+.rectangleMain {
+  border: solid 1px @border_colour;
+  padding: 6px;
+}
+
+.rectangleLeft{
+  border-color: @border_colour;
+  border-style: solid;
+  border-width: 1px 0px 1px 1px;
+}
+
+////// Styles for Rounded Corners //////
+.rounded_corners {
+  border: 1px solid @border_colour;
+  -moz-border-radius: @rounded_radius;
+  -webkit-border-radius: @rounded_radius;
+  -ms-border-radius: @rounded_radius;
+  -o-border-radius: @rounded_radius;
+  border-radius: @rounded_radius;
+}
+
+.rounded {
+  .rounded_corners;
+  padding: 2px 5px;
+  margin: 6px 3px 6px 3px;
+  background: @background_nohighlight;
+}
+
+.roundedHighlight {
+  .rounded;
+  background: @background_highlight;
+}
+
+.roundedHighlightNoBorder {
+  .rounded;
+  border: none;
+  background: @background_borderless_highlight;
+}
+
+.roundedUnhighlight {
+  .rounded;
+}
+
+.roundedDisabled {
+  .rounded;
+  border: none;
+  background: @background_disabled;
+}
+
+.disabled
+{
+  color: @disabled_colour;
+}
+
+.deletedItem {
+  .roundedDisabled;
+  .disabled;
+}
+
+.roundedHeader {
+  .rounded_corners;
+  background: @background_highlight;
+  margin: 3px 3px 0px 3px;
+  padding: 2px;
+}
+
+.roundedFooter {
+  .rounded_corners;
+  background: @background_highlight;
+  padding: 2px;
+  margin: 0px 3px 0px 3px;
+}
+
+.roundedTop {
+  border:solid 1px @border_colour;
+  background: @background_highlight;
+  border-collapse:collapse;
+  border-bottom-style: none;
+  border-bottom: 0px;
+  padding: 2px 10px;
+  text-align: left;
+  -moz-border-radius-topleft: @rounded_radius;
+  -webkit-border-top-left-radius: @rounded_radius;
+  -moz-border-radius-topright: @rounded_radius;
+  -webkit-border-top-right-radius: @rounded_radius;
+}
+
+.roundedTopCorners {
+  .roundedTop;
+}
+
+.roundedMain {
+  padding: 6px;
+  border: solid 1px @border_colour;
+  -moz-border-radius-bottomleft: @rounded_radius;
+  -webkit-border-bottom-left-radius: @rounded_radius;
+  -moz-border-radius-bottomright: @rounded_radius;
+  -webkit-border-bottom-right-radius: @rounded_radius;
+}
+
+.tabMain {
+  padding: 10px;
+  border: solid 1px @border_colour;
+  display: block;
+  height: auto;
+}
+
+.tabHighlight {
+  padding: 5px;
+  margin: 6px 0px 6px 0px;
+  border: solid 1px @border_colour;
+  background: @background_highlight;
+}
+
+.roundedLeft {
+  border-color: @border_colour;
+  border-style: solid;
+  border-width: 1px 0px 1px 1px;
+  border-bottom-left-radius:@rounded_radius;
+  -moz-border-bottom-left-radius:@rounded_radius;
+  -webkit-border-bottom-left-radius:@rounded_radius;
+  -ms-border-bottom-left-radius:@rounded_radius;
+  -o-border-bottom-left-radius:@rounded_radius;
+  border-top-left-radius:@rounded_radius;
+  -moz-border-top-left-radius:@rounded_radius;
+  -webkit-border-top-left-radius:@rounded_radius;
+  -ms-border-top-left-radius:@rounded_radius;
+  -o-border-top-left-radius:@rounded_radius;
+}
+
+.roundedLeftHighlight {
+  .roundedLeft;
+  background-color: @background_highlight;
+}
+
+.roundedRight {
+  border: solid 1px @border_colour;
+  border-bottom-right-radius:@rounded_radius;
+  -moz-border-bottom-right-radius:@rounded_radius;
+  -webkit-border-bottom-right-radius:@rounded_radius;
+  -ms-border-bottom-right-radius:@rounded_radius;
+  -o-border-bottom-right-radius:@rounded_radius;
+  border-top-right-radius:@rounded_radius;
+  -moz-border-top-right-radius:@rounded_radius;
+  -webkit-border-top-right-radius:@rounded_radius;
+  -ms-border-top-right-radius:@rounded_radius;
+  -o-border-top-right-radius:@rounded_radius;
+}
+
+.roundedRightHighlight {
+  .roundedRight;
+  background-color: @background_highlight;
+}
+
+//////// End Syles For Rounded Corners /////////
+
+/* Collapsible Menus */
+
+ul.criteria-list, ul.criteria-list ul
+{
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+ul.criteria-list li
+{
+  list-style-type: none;
+  text-align: left;
+}
+
+.collapsible
+{
+  display: block;
+  position: relative;
+  height: auto;
+  width: 100%;
+}
+
+.collapsible .c-trigger
+{
+  cursor: pointer;
+}
+
+.collapsible .c-item
+{
+  padding: 0 0 5px 5px;
+  display: none;
+}
+
+.collapsible > li
+{
+  border-top: 1px solid #dedede;
+}
+
+.collapsible li h3
+{
+  display: block;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.collapsible .active .c-item
+{
+  display: block !important;
+}
+
+.collapsible .c-trigger
+{
+  padding-left: 20px;
+}
+.collapsible .active .c-trigger
+{
+  background: url('../../../Common/Images/Icons/ArrowGreyDown.png') left no-repeat;
+}
+.collapsible .active .c-trigger:hover
+{
+  background-color: #EFEFEF;
+}
+.collapsible .c-trigger
+{
+  background: url('../../../Common/Images/Icons/ArrowGreyRight.png') left no-repeat;
+}
+.collapsible .c-trigger:hover
+{
+  background-color: @highlightBackground;
+}
+/* End Collapsible Menus */
+
+//////// End Master Page Styles ////////
+
+
+//////// Common Styles /////////
+.clear
+{
+  clear: both;
+  padding: 0px;
+}
+
+.hidden
+{
+  display: none;
+}
+
+.hiddenCell
+{
+  display: none;
+  visibility: collapse;
+}
+
+.clearfix
+{
+  clear: both;
+}
+
+.CriteriaInputSection
+{
+  text-align: left;
+}
+
+.CriteriaInputSection .InputFieldWrapper
+{
+  display: block;
+  position: relative;
+  height: auto;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.CriteriaInputSection .InputFieldWrapper .LabelWrapper
+{
+  display: block;
+  position: relative;
+  height: auto;
+  width: 100%;
+  clear: left;
+}
+
+.CriteriaInputSection .InputFieldWrapper .InputWrapper
+{
+  display: block;
+  position: relative;
+  height: auto;
+  width: 100%;
+  clear: left;
+}
+.CriteriaInputSection .InputFieldWrapper .DateTimePickerWrapper
+{
+  display: block;
+  position: relative;
+  height: auto;
+  width: 100%;
+  clear: left;
+}
+
+.InputFieldWrapper .InputWrapper > input[type="textbox"], .InputFieldWrapper .InputWrapper > input[type="text"], .InputFieldWrapper .InputWrapper > select, .InputFieldWrapper .InputWrapper span > select
+, .InputFieldWrapper .InputWrapper span > input[type="text"]
+{
+  width: 95%;
+}
+
+.center
+{
+  margin: 0 auto;
+}
+
+.criteriaContainer
+{
+  .center;
+  width: 1003px;
+}
+
+//////// Inline Styling
+
+.inline .InputFieldWrapper:after
+{
+  clear: both;
+}
+
+.inline .InputFieldWrapper .LabelWrapper
+{
+  float: left !important;
+  width: 70px !important;
+}
+
+.inline .InputFieldWrapper .InputWrapper
+{
+  float: left !important;
+  width: 240px !important;
+}
+
+.inline .InputFieldWrapper .DateTimePickerWrapper
+{
+  float: left !important;
+  min-width: 250px !important;
+}
+
+
+
+//////// End Inline Styling
+
+.dateTimePickerControl .ValidatorError
+{
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.TimeFramePickerControl
+{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 5px;
+}
+.TimeFramePickerControl > div, .TimeFramePickerControl .CriteriaInputSection
+{
+  display: block;
+  float: left;
+  height: auto;
+  width: 100%;
+}
+.TimeFramePickerControl > div:after, .TimeFramePickerControl .CriteriaInputSection:after
+{
+  clear: both;
+}
+
+.InputLabel{
+  vertical-align:middle;
+  white-space: nowrap;
+}
+
+.InputTitle
+{
+  font-size: 1.2em;
+}
+
+.deletedItem .InputLabel:Link
+{
+  color: @disabled_link_colour;
+}
+
+.deletedItem .InputLabel:Visited
+{
+  color: @disabled_link_colour;
+}
+
+
+.InputHeader{
+  font-weight:bold;
+}
+
+.InputError{
+  .has-error;
+}
+
+select.InputError, input.InputError{
+  .has-error;
+}
+
+#CriteriaControlButtons{
+}
+
+#CriteriaControlButtons .spacer
+{
+  display: inline;
+  margin: 0 5px 0 0;
+  padding: 0 !important;
+  width: 1px;
+  height: 30px;
+  border-right: 1px solid #000000;
+}
+
+#ReportFormat
+{
+  padding-bottom:5px;
+}
+
+.roundedMain
+{
+  height: auto;
+  display: block;
+}
+
+.criteriaControls
+{
+  overflow:auto;
+  width: 300px;
+  margin-left: 85px;
+}
+
+
+.clearForm{
+  vertical-align: top;
+  text-align: right;
+  margin: 1%;
+  margin-right: 1%;
+  margin-left: 160px;
+  float: left;
+}
+.generate{
+  vertical-align: top;
+  margin: 1%;
+  text-align: right;
+  margin-right: 0;
+  margin-left: 11px;
+  float: left;
+}
+
+.btnEmailTrigger {
+  margin-left: 0 !important;
+  background-color:#eeeeee !important;
+  color: #333 !important;
+  border-color: #707070 !important;
+}
+
+.btnEmailTrigger:hover, .btnEmailTrigger:focus {
+  color: #333 !important;
+}
+
+.btnSendReport {
+  margin-left: 0 !important;
+  background-color:#eeeeee !important;
+  border: #eeeeee !important;
+  color: #333 !important;
+}
+
+.btnSendReport:hover, .btnSendReport:focus {
+  color: #333 !important;
+}
+
+.input-group-addon:first-child {
+  border-right: 1px solid #ccc !important;
+  border-bottom-right-radius: 3px !important;
+  border-top-right-radius: 3px !important;
+}
+
+.alertClear {
+  background-color:#ffffff !important;
+  color: #fff !important;
+  border: #ffffff !important;
+  width: 280px !important;
+}
+
+.alertSuccess {
+  background-color:#DDFFC2 !important;
+  color: #333 !important;
+  border: #eeeeee !important;
+  width: 280px !important;
+}
+
+.alertFailure {
+  background-color: #FFCDD4 !important;
+  color: #333 !important;
+  border: #eeeeee !important;
+  width: 280px !important;
+}
+
+.alertWarning {
+  background-color: #FFF9D7 !important;
+  color: #333 !important;
+  border: #eeeeee !important;
+  width: 280px !important;
+}
+
+.alignRight{
+  text-align:right;
+  margin-left: auto;
+}
+
+.InputSuccess{
+  color: @success_colour;
+  font-weight: bold;
+}
+
+.InputSection
+{
+  padding: 10px 0px 10px 15px;
+  margin: 2px 0 0 0;
+  border-top: dashed 1px gray;
+}
+
+.InputTextBox
+{
+  border: 1px solid @textbox_border;
+  height: 18px;
+}
+
+.WideInputTextBox
+{
+  .InputTextBox;
+  width: 275px;
+}
+
+.InputMultilineTextBox
+{
+  border: 1px solid @textbox_border;
+}
+
+.CriteriaInputSection
+{
+  position: relative;
+  display: block;
+  padding: 5px 0 0 0;
+}
+
+.CriteriaInputSection .InputLabel
+{
+  position: relative;
+  display: block;
+  padding: 0 0 5px 0;
+}
+
+.CriteriaInputSection .InputFieldDiv
+{
+  position: relative;
+  display: block;
+  height: auto;
+  width: 100%;
+  padding: 0 0 10px 0;
+}
+
+.LoginInputLabel
+{
+  text-align: left;
+  font-family: Arial;
+  width: 140px;
+}
+
+.title
+{
+  color: @header_colour;
+  padding: 15px;
+  font-size:28px;
+  font-weight:bold;
+}
+
+.titleHeader
+{
+  color: @header_colour;
+  font-size: 18px;
+}
+
+.errorHeader
+{
+  .label-danger;
+}
+
+.ResultHeader
+{
+  background-color: @result_header;
+  color:#000000;
+  font-family:Arial,Verdana,Helvetica,sans-serif;
+  font-size:14px;
+  font-weight: bold;
+  letter-spacing:1px;
+  padding-left:3px;
+  margin-bottom: 5px;
+  border: solid 1px @result_header_border;
+}
+
+.LogoutSuccessMessage
+{
+  color: @success_colour;
+}
+
+.Watermark
+{
+  color: @watermark_color;
+}
+
+.TableActionButton
+{
+  cursor: hand;
+}
+
+.inputTextBoxUpper
+{
+  text-transform: uppercase;
+}
+
+.textBoxAsLabel
+{
+  border-style: none;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.dateTextBox
+{
+  .textBoxAsLabel;
+  .inputTextBoxUpper;
+  width: 80px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.calendarButton
+{
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.calendarImage
+{
+  vertical-align: top;
+  margin-top: 3px;
+  margin-left: -2px;
+}
+
+//////// End Common Styles /////////
+
+
+/////// Brock Controls Styles /////////
+
+.DateTimePicker_tbDate
+{
+  width: 85px;
+  text-transform: uppercase;
+  float: left;
+}
+
+.DateTimePicker_imgCalendar
+{
+  margin-left: 2px;
+  padding-top: 2px;
+  padding-right: 4px;
+  cursor: pointer;
+}
+
+.DateTimePicker_Validator
+{
+  float: left;
+  clear: both;
+}
+
+.dtpDateWrapper, .dtpTimeWrapper
+{
+  display: block;
+  position: relative;
+  height: 26px;
+  vertical-align:text-top;
+  text-align: left;
+}
+
+.inline .dtpDateWrapper, .dtpTimeWrapper
+{
+  float: left;
+}
+
+.inline .dateTimePickerControl :after
+{
+  clear: both;
+}
+
+.dtpDateWrapper
+{
+  width: 130px;
+  overflow: visible;
+  float: left;
+}
+
+.dtpTimeWrapper
+{
+  width: 120px;
+  overflow: visible;
+}
+
+.dateTimePickerControl
+{
+  display: block;
+  position: relative;
+  height: 28px;
+  padding: 5px 0 0 0;
+}
+
+.dateSelector
+{
+  vertical-align: top;
+  text-transform: uppercase;
+  background-color: @background_nohighlight;
+  border: 1px solid @input-border;
+  height: 18px;
+  color: black;
+}
+
+.TimePicker
+{
+  position:relative;
+}
+
+.TimePicker .ajax__combobox_inputcontainer
+{
+  position: static!important;
+}
+
+.TimePicker .ajax__combobox_textboxcontainer input
+{
+  width: 70px;
+  margin-top: 0px !important;
+}
+
+.TimePicker .ajax__combobox_buttoncontainer button
+{
+  border: 0;
+  margin: 1px 0 0 2px!important;
+  padding: 0;
+  width: 22px!important;
+  height: 22px!important;
+
+background: url('../../../Common/Images/Icons/TimeButton.png') transparent left top no-repeat;
+  cursor: pointer;
+}
+
+.ajax__combobox_itemlist
+{
+  width: 104px !important;  /* needs to overwrite inline style */
+  height: 200px !important;
+  top: 20px !important;
+  left: 1px !important;
+}
+
+/////// End Brock Controls Styles /////////
+
+
+/* Web Link Styles 
+-----------------------------------------*/
+
+#WebLinks
+{
+  list-style: none;
+}
+
+#WebLinks ol
+{
+  list-style: none;
+  padding: 0 0 20px 0;
+  margin: 0 0 0 50px;
+}
+
+#WebLinks ol li
+{
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+#WebLinks h1
+{
+  .InputHeader;
+  border-bottom:1px solid #666666;
+  color:#333333;
+  font-weight:bold;
+}
+
+#WebLinks a
+{
+  .InputLabel;
+}
+
+/* End Web Link Styles 
+-----------------------------------------*/
+/////// New Clue Tip Styles //////
+
+/* global */
+#cluetip-close img {
+  border: 0;
+}
+#cluetip-title {
+  overflow: hidden;
+}
+#cluetip-title #cluetip-close {
+  float: right;
+  position: relative;
+}
+#cluetip-waitimage {
+  width: 43px;
+  height: 11px;
+  position: absolute;
+  /*background-image: url(images/wait.gif);*/
+}
+.cluetip-arrows {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -11px;
+  height: 22px;
+  width: 11px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+#cluetip-extra {
+  display: none;
+}
+/***************************************
+   =cluetipClass: 'default' 
+-------------------------------------- */
+
+.cluetip-default {
+  background-color: @cluetip_background;
+}
+.cluetip-default #cluetip-outer {
+  position: relative;
+  margin: 0;
+  background-color: @cluetip_background;
+}
+.cluetip-default h3#cluetip-title {
+  margin: 0 0 5px;
+  padding: 8px 10px 4px;
+  font-size: 1.1em;
+  font-weight: normal;
+  background-color: #87876a;
+  color: #fff;
+}
+.cluetip-default #cluetip-title a {
+  color: #d9d9c2;
+  font-size: 0.95em;
+}
+.cluetip-default #cluetip-inner {
+  padding: 10px;
+}
+.cluetip-default div#cluetip-close {
+  text-align: right;
+  margin: 0 5px 5px;
+  color: #900;
+}
+
+/* default arrows */
+
+.clue-right-default .cluetip-arrows {
+  background-image: url('../../../Common/images/darrowleft.gif');
+}
+.clue-left-default .cluetip-arrows {
+  background-image: url('../../../Common/images/darrowright.gif');
+  left: 100%;
+  margin-right: -11px;
+}
+.clue-top-default .cluetip-arrows {
+  background-image: url('../../../Common/images/darrowdown.gif');
+  top: 100%;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+.clue-bottom-default .cluetip-arrows {
+  background-image: url('../../../Common/images/darrowup.gif');
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+
+/***************************************
+   =cluetipClass: 'jtip'
+-------------------------------------- */
+.cluetip-jtip {
+  background-color: transparent;
+}
+.cluetip-jtip #cluetip-outer {
+  border: 2px solid #ccc;
+  position: relative;
+  background-color: #fff;
+}
+
+.cluetip-jtip h3#cluetip-title {
+  margin: 0 0 5px;
+  padding: 2px 5px;
+  font-size: 16px;
+  font-weight: normal;
+  background-color: #ccc;
+  color: #333;
+}
+
+.cluetip-jtip #cluetip-inner {
+  padding: 0 5px 5px;
+  display: inline-block;
+}
+.cluetip-jtip div#cluetip-close {
+  text-align: right;
+  margin: 0 5px 5px;
+  color: #900;
+}
+
+/* jtip arrows */
+
+.clue-right-jtip .cluetip-arrows {
+  background-image: url('../../../Common/images/arrowleft.gif');
+}
+.clue-left-jtip .cluetip-arrows {
+  background-image: url('../../../Common/images/arrowright.gif');
+  left: 100%;
+  margin-right: -11px;
+}
+.clue-top-jtip .cluetip-arrows {
+  background-image: url('../../../Common/images/arrowdown.gif');
+  top: 100%;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+.clue-bottom-jtip .cluetip-arrows {
+  background-image: url('../../../Common/images/arrowup.gif');
+  top: -11px;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+
+/***************************************
+   =cluetipClass: 'rounded'
+-------------------------------------- */
+
+.cluetip-rounded {
+  background: transparent url('../../../Common/images/bl.gif') no-repeat 0 100%;
+  margin-top: 10px;
+  margin-left: 12px;
+}
+
+.cluetip-rounded #cluetip-outer {
+  background: transparent url('../../../Common/images/tl.gif') no-repeat 0 0;
+  margin-top: -12px;
+}
+
+.cluetip-rounded #cluetip-title {
+  background-color: transparent;
+  padding: 12px 12px 0;
+  margin: 0 -12px 0 0;
+  position: relative;
+}
+.cluetip-rounded #cluetip-extra {
+  position: absolute;
+  display: block;
+  background: transparent url('../../../Common/images/tr.gif') no-repeat 100% 0;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 30px;
+  margin: -12px -12px 0 0;
+}
+.cluetip-rounded #cluetip-inner {
+  background: url('../../../Common/images/br.gif') no-repeat 100% 100%;
+  padding: 5px 12px 12px;
+  margin: -18px -12px 0 0;
+  position: relative;
+}
+
+.cluetip-rounded div#cluetip-close {
+  text-align: right;
+  margin: 0 5px 5px;
+  color: #009;
+  background: transparent;
+}
+.cluetip-rounded div#cluetip-close a {
+  color: #777;
+}
+
+/* rounded arrows */
+
+.clue-right-rounded .cluetip-arrows {
+  background-image: url('../../../Common/images/rarrowleft.gif');
+}
+.clue-left-rounded .cluetip-arrows {
+  background-image: url('../../../Common/images/rarrowright.gif');
+  left: 100%;
+  margin-left: 12px;
+}
+.clue-top-rounded .cluetip-arrows {
+  background-image: url('../../../Common/images/rarrowdown.gif');
+  top: 100%;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+.clue-bottom-rounded .cluetip-arrows {
+  background-image: url('../../../Common/images/rarrowup.gif');
+  top: -23px;
+  left: 50%;
+  margin-left: -11px;
+  height: 11px;
+  width: 22px;
+}
+/////// End New Clue Tip Styles //////
+
+
+////// User Message Control Styles //////
+
+.userMessages
+{
+  display: table;
+  max-width: 500px;
+  margin: auto;
+}
+
+.userMessages ul
+{
+  padding: 0 0 0 22px;
+}
+
+.userMessages .singleItem
+{
+  list-style: none;
+  padding: 0 0 0 10px;
+}
+
+.iconInstructionMessage {
+  background-image: url("../../Common/Images/Icons/notificationsInstruction.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 1px 10px 1px 10px;
+  border-left:  @messageLeftBorder solid @instruction_colour;
+  background-color: @instruction_colour !important;
+}
+
+.iconErrorMessage {
+  background-image: url("../../Common/Images/Icons/notificationsError.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 1px 10px 1px 10px;
+  border-left: @messageLeftBorder solid @alert-danger-bg;
+  background-color: @alert-danger-bg !important;
+}
+
+.iconSuccessMessage {
+  background-image: url("../../Common/Images/Icons/notificationsSuccess.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 1px 10px 1px 10px;
+  border-left:  @messageLeftBorder solid @state-success-bg;
+  background-color: @state-success-bg !important;
+}
+
+.iconInformationMessage {
+  background-image: url("../../Common/Images/Icons/notificationsInformation.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 1px 10px 1px 10px;
+  border-left:  @messageLeftBorder solid @state-info-bg;
+  background-color: @state-info-bg !important;
+}
+
+.instructionMessages
+{
+  .alert-info;
+}
+
+.errorMessages
+{
+  .alert-danger;
+}
+
+.successMessages
+{
+  .alert-success;
+}
+
+.informationMessages
+{
+  .alert-info;
+}
+
+// Early IE styles
+
+.messagesWrapper
+{
+  width: 350px;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+.messagesListWrapper
+{
+  padding-top: 1px;
+}
+
+// End of early IE styles
+
+/////// End User Message Control Styles //////
+
+
+////// Switch Styles //////
+
+.cb-enable, .cb-disable, .cb-enable span, .cb-disable span
+{
+  background: url('../../Common/Images/Icons/Switch.gif') repeat-x;
+  display: block;
+  float: left;
+}
+
+.selector-disable, .selector-enable, .selector-disable span, .selector-enable span, .cb-market
+{
+  background: url('../../Common/Images/Icons/Selector.gif') repeat-x;
+  display: block;
+  float: left;
+}
+
+.cb-enable span, .cb-disable span, .selector-disable span, .selector-enable span
+{
+  line-height: 30px;
+  display: block;
+  background-repeat: no-repeat;
+}
+
+.cb-enable span, .selector-disable span
+{
+  background-position: left -90px;
+  padding: 0 10px;
+  color: @switch_unselected_font_colour;
+}
+
+.cb-disable span, .selector-enable span
+{
+  background-position: right -180px;
+  padding: 0 10px;
+  color: @switch_unselected_font_colour;
+}
+
+.cb-disable.selected, .selector-enable.selected
+{
+  background-position: 0 -30px;
+}
+
+.cb-disable.selected span, .selector-enable.selected span
+{
+  background-position: right -210px;
+  color: @switch_selected_font_colour;
+  font-weight: bold;
+}
+
+.cb-enable.selected, .selector-disable.selected
+{
+  background-position: 0 -60px;
+}
+
+.cb-market.selected
+{
+  background-position: 0 -59px;
+}
+
+.cb-enable.selected span, .selector-disable.selected span, .cb-market.selected span
+{
+  background-position: left -150px;
+  color: @switch_selected_font_colour;
+  font-weight: bold;
+}
+
+.cb-market span
+{
+  line-height: 30px;
+  display: block;
+  background-repeat: no-repeat;
+  font-weight: bold;
+  background-position: left -90px;
+  padding: 0 10px;
+}
+
+.cb-market
+{
+  width: 50px;
+}
+
+.market-left
+{
+  border-radius: 4px 0 0 4px;
+  border: 1px solid @blue_border_colour;
+  text-align: center;
+}
+
+.market-left span, .market-right span, .market-middle span
+{
+  font-weight: normal;
+}
+
+.market-left.selected span, .market-right.selected span, .market-middle.selected span
+{
+  font-weight: bold;
+}
+
+.market-right
+{
+  border-radius: 0 4px 4px 0;
+  border: 1px solid @blue_border_colour;
+  text-align: center;
+  font-weight: normal;
+}
+
+.market-middle
+{
+  border: 1px solid @blue_border_colour;
+  text-align: center;
+  font-weight: normal;
+}
+
+.switch label, .selector-enable, .selector-disable, .cb-market
+{
+  cursor: pointer;
+}
+
+.switch input
+{
+  display: none;
+}
+
+/////// End Switch Styles //////
+
+/////// Favourite Flight Styles //////
+
+.favoriteTd
+{
+  cursor: pointer;
+  width: 20px;
+}
+
+.isFavorite
+{
+  .favoriteTd;
+  background: url('../../Common/Images/Icons/favourite_selected.png') center no-repeat;
+}
+
+.notFavorite
+{
+  .favoriteTd;
+  background: url('../../Common/Images/Icons/favourite_unselected.png') center no-repeat;
+}
+
+/////// End Favourite Flight Styles //////
+
+
+/////// jQuery DataTable Styles //////
+
+
+.dataTables_display tbody tr:hover
+{
+  background-color: @datatable_hover_background !important;
+  cursor: pointer;
+}
+
+.dataTables_display table.nonHover tr:hover
+{
+  background-color: transparent !important;
+  cursor: default;
+}
+
+table.dataTables_display thead th
+{
+  height: auto !important;
+}
+
+/////// MVC Setup Page List Styles //////
+
+.setupListSelectedRow td
+{
+  background-color: @datatable_hover_background !important;
+}
+
+////// Statistics Table Styles //////
+
+table.statistics
+{
+  border-collapse: collapse;
+}
+
+table.statistics td
+{
+  border-style: solid;
+  border-color: @statistics_border_colour;
+  border-width: 1px;
+  padding: 5px;
+}
+
+table.statistics td
+{
+  text-align: center;
+}
+
+table.statistics th, thead td
+{
+  border: none;
+}
+
+table.statistics thead
+{
+  border: 1px solid @blue_border_colour;
+}
+
+table.statistics th,
+th.statistics
+{
+  background-color: @statistics_header_background;
+  color: @statistics_header_font_colour;
+  font-weight: normal;
+  text-align: center;
+  padding: 2px;
+}
+
+table.statistics .disabledCell
+{
+  color: @statistics_disabled_colour;
+  background-color: @statistics_disabled_colour;
+}
+
+////// End Statistics Table Styles //////
+
+////// DataTableInner For Inner tables Styles //////
+
+table.dataTableInner {
+  width: auto;
+  margin: 0 auto;
+  clear: both;
+  padding:0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0px;
+  background-color: transparent !important;
+}
+
+table.dataTableInner tr {
+  border: 0px;
+  background-color: transparent !important;
+  padding: 0px;
+}
+
+table.dataTableInner td {
+  border: 0px !important;
+  background-color: transparent !important;
+  padding: 0px !important;
+}
+
+////// End DataTableInner Table Styles //////
+
+
+////// Reset DataTable For Inner tables Styles //////
+
+table.resetDataTable {
+  width: auto;
+  margin: 0 auto;
+  clear: both;
+  padding:0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0px;
+  background-color: white;
+}
+
+table.resetDataTable thead th,
+table.resetDataTable thead td,
+table.resetDataTable tfoot th,
+table.resetDataTable tfoot td {
+  padding: 0px;
+  border: 0px;
+  text-align: left;
+}
+table.resetDataTable thead th,
+table.resetDataTable tfoot th {
+  font-weight: normal;
+  border: 0px;
+}
+table.resetDataTable thead th:active,
+table.resetDataTable thead td:active {
+  outline: none;
+}
+
+table.resetDataTable tbody tr, table.resetDataTable thead tr {
+  background-color:  transparent !important;
+  border: 0px;
+}
+table.resetDataTable tbody tr.selected {
+  background-color:  transparent !important;
+  border: 0px;
+}
+table.resetDataTable tbody th,
+table.resetDataTable tbody td {
+  border: 0px;
+  padding: 0px;
+}
+
+table.resetDataTable.stripe tbody tr.even,
+table.resetDataTable.display tbody tr.even {
+  background-color:  transparent !important;
+}
+
+table.resetDataTable.stripe tbody tr.odd, table.resetDataTable.display tbody tr.odd {
+  background-color:  transparent !important;
+}
+
+table.resetDataTable.hover tbody tr:hover,
+table.resetDataTable.hover tbody tr.odd:hover,
+table.resetDataTable.hover tbody tr.even:hover,
+table.resetDataTable.hover thead tr:hover {
+  background-color: transparent !important;
+}
+table.resetDataTable.hover tbody tr:hover,
+table.resetDataTable.hover tbody tr.odd:hover,
+table.resetDataTable.hover tbody tr.even:hover,
+table.resetDataTable.hover thead tr:hover {
+  background-color: transparent !important;
+}
+
+.table.resetDataTable tr:hover, .selectedDetails{
+
+  background-color: transparent !important;
+}
+
+table.resetDataTable.hover tbody tr:hover.selected,
+table.resetDataTable.hover thead tr:hover.selected,
+table.resetDataTable.hover tbody tr.odd:hover.selected,
+table.resetDataTable.hover tbody tr.even:hover.selected {
+  background-color: transparent;
+}
+
+table.resetDataTable tbody tr:hover,
+table.resetDataTable tfoot tr:hover,
+table.resetDataTable thead tr:hover, .selectedDetails
+{
+  background-color: transparent !important;
+  cursor: auto;
+}
+
+
+////// End Reset DataTable  Table Styles //////
+
+////// Start baseTable Styles//////
+
+/*
+ * Table styles
+ */
+table.baseTable {
+  width: 100%;
+  margin: 0 auto;
+  clear: both;
+  padding:0px;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  /*
+   * Header and footer styles
+   */
+  /*
+   * Body styles
+   */
+}
+
+table.baseTable thead th,
+table.baseTable thead td,
+table.baseTable tfoot th,
+table.baseTable tfoot td {
+  padding: 4px 5px;
+  text-align: center;
+}
+
+table.baseTable thead th,
+table.baseTable tfoot th {
+  font-weight: normal;
+  color: #000000;
+  border: 1px solid #d3d3d3;
+  background: #e6e6e6 url('jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png') 50% 50% repeat-x;
+}
+
+table.baseTable thead th:active,
+table.baseTable thead td:active {
+  outline: none;
+}
+
+table.baseTable tr:nth-child(even) {background: #E6EFFF}
+table.baseTable tr:nth-child(odd) {background: #FBFBFB}
+
+table.baseTable tbody td {
+  border: 1px solid #aaaaaa;
+  padding: 2px 2px;
+}
+
+
+table.baseTable tbody th,
+table.baseTable tbody td {
+  border-top: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+}
+
+table.baseTable th.center,
+table.baseTable td.center{
+  text-align: center;
+}
+table.baseTable th.right,
+table.baseTable td.right {
+  text-align: right;
+}
+
+table.baseTable.airlineSettingsTable {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+table.baseTable tr:hover
+{
+  background-color: @datatable_hover_background !important;
+  cursor: auto;
+}
+
+
+
+////// End baseTable Styles//////
+
+
+
+////// Edit Bag Flag tables Styles //////
+
+table.editBagFlag {
+  width: auto;
+  margin: 0px;
+  text-align:left;
+  margin-left: 50px;
+  clear: both;
+  padding:0px;
+  border-spacing: 0;
+  border: 0px;
+  background-color: white;
+}
+
+table.editBagFlag thead tr {
+  padding: 0px;
+  border: 0px;
+  height: 35px;
+}
+
+table.editBagFlag tr {
+  padding: 0px;
+  border: 0px;
+  height: 35px;
+}
+table.editBagFlag td,
+table.editBagFlag tbody td {
+  font-weight: normal;
+  padding: 0px;
+  padding-left: 5px;
+  border: 0px;
+}
+
+table.editBagFlag tr:hover,
+table.editBagFlag tr:hover,
+table.editBagFlag tr:hover
+{
+  background-color: white !important;
+  cursor: auto;
+  border: 0px;
+}
+
+
+
+////// End Edit Bag Flag tables Styles//////
+
+.clickableCellUnhighlighted:hover
+{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.clickableCellHighlighted:hover
+{
+  background-color: @datatable_hover_background;
+}
+
+.ie6UnhighlightedCell
+{
+  cursor: hand;
+  text-decoration: underline;
+}
+
+.ie6HighlightedCell
+{
+  cursor: hand;
+  text-decoration: underline;
+  background-color: @datatable_hover_background;
+}
+
+.bottomSeparator
+{
+  border-bottom: 1px solid @statistics_header_background;
+}
+
+////// Autocomplete Styles //////
+
+.autoComplete
+{
+  min-width: 70px;
+}
+
+.carrierAutoComplete
+{
+  .autoComplete;
+  width: 70px;
+}
+
+.multipleCarrierAutoComplete
+{
+  .carrierAutoComplete;
+}
+
+.airportAutoComplete
+{
+  .autoComplete;
+  width: 75px;
+}
+
+.facilityAutoComplete
+{
+  .autoComplete;
+  width: 145px;
+}
+
+.autoCompleteDropDown
+{
+  width: 200px !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.autoCompleteDropDown .select2-highlighted
+{
+  background: @autocomplete_highlight_background_color !important;
+  color: @autocomplete_highlight_font_color !important;
+}
+
+//////// Global Search Styles ////////
+
+.resultsTable
+{
+  margin-top: 10px;
+  width: 95%;
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.resultsTable th
+{
+  border-style: none;
+  text-align: left;
+}
+
+.resultsTable th, .resultsTable td
+{
+  background: none repeat scroll 0 0 #F1F1F1;
+  padding: 10px;
+  border-bottom: 5px solid white;
+  vertical-align: top;
+}
+
+.itineraryTable
+{
+  border-collapse: collapse;
+}
+
+.itineraryTable td
+{
+  border-bottom: none;
+  padding: 0px 10px 5px 0px;
+}
+
+.itineraryTable .tdFlightNumber
+{
+  width: 48px;
+}
+
+//////// End Global Search Styles ////////
+
+//////// BRS Details Pages Styles ////////
+
+.warningPanel
+{
+  max-width: 1200px;
+  min-width: 600px;
+  margin: auto;
+  text-align: left;
+  vertical-align: top;
+}
+
+.leftPanel
+{
+  width: 600px;
+  margin-bottom: 10px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rightPanel
+{
+  width: 600px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+}
+
+.detailsHeaderSection
+{
+  padding-left: 5px;
+}
+
+.detailsHeader
+{
+  font-size: 14pt;
+  font-weight: bold;
+  padding-left: 3px;
+}
+
+.informationSection
+{
+  border-top: 1px solid @legend-border-color;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.informationSection table td
+{
+  vertical-align: top;
+}
+
+.noDataSection
+{
+  width: 100%;
+  text-align: center;
+  margin: 10px 0px 0px 20px;
+  padding-bottom: 10px;
+}
+
+.sectionHeader
+{
+  padding: 0 0 0 5px;
+}
+
+.dataLabel
+{
+  padding: 0 0 0 5px;
+}
+
+.tblTransaction tr:nth-child(even)
+{
+  background: @highlightBackground;
+}
+
+//////// End BRS Details Pages Styles ////////
+
+//////// Inbound/Outbound Styles ////////
+.selectedFlight
+{
+  background-color: @state-info-bg;
+}
+//////// End Inbound/Outbound Styles ////////
+
+//////// Flight Criteria Styles ////////
+
+.flightCriteriaTable .dataEntryField
+{
+  padding: 0px 10px 0px 5px;
+}
+
+.flightCriteriaTable .searchButton
+{
+  margin-left: 10px;
+}
+
+.flightCriteriaTable .dateField
+{
+  min-width: 105px;
+}
+
+.flightCriteriaTable .carrierValidator
+{
+  top: 0.7em;
+  position: relative;
+}
+
+.flightCriteriaTable .flightTextbox
+{
+  width: 40px;
+}
+
+//////// End Flight Criteria Styles ////////
+
+//////// Connection Status Styles ////////
+.riskStatus
+{
+  background-color: @state-warning-bg;
+}
+
+.cancelledDivertedStatus
+{
+  background-color: @state-warning-bg;
+}
+
+.bustStatus
+{
+  background-color: @state-danger-bg;
+}
+//////// End Connection Status Styles ////////
+
+//////// Operations Dashboard Highlight Styles ////////
+
+.warningStatus
+{
+  background-color: @state-warning-bg;
+}
+
+.alertStatus
+{
+  background-color: @state-danger-bg;
+}
+
+.actionItemsCell
+{
+  background-color: @state-info-bg;
+}
+
+//////// End Operations Dashboard Highlight Styles ////////
+
+//////// Columns Setting Control Styles ////////
+
+#chkWrapper
+{
+  z-index: 1000;
+  position: relative
+}
+
+.columnTitle
+{
+  width: 100%;
+  text-align: left;
+  background: url('../../Common/Images/Icons/ArrowGreyRight.png') left no-repeat;
+  padding-left: 10px;
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  font-size: 9pt;
+}
+
+.columnTitle:hover
+{
+  background-color: @highlightBackground;
+}
+
+.columnsShow
+{
+  background: url('../../Common/Images/Icons/ArrowGreyDown.png') left no-repeat;
+}
+
+.columnsHide
+{
+  background: url('../../Common/Images/Icons/ArrowGreyRight.png') left no-repeat;
+}
+
+#columnsWrapper
+{
+  z-index: 1000;
+  position: absolute;
+  -moz-opacity: 0.75;
+  width: 250px;
+  background: @background_nohighlight !important;
+  border: 1px solid @border_colour;
+}
+
+#columnsScroll
+{
+  overflow: auto;
+  width: 100%;
+  height: 350px;
+}
+
+#columnsButtons
+{
+  border: 1px solid @border_colour;
+  height: 20px;
+  width: 100%;
+  line-height: 20px;
+  background-color: @background_highlight;
+  margin-left: -1px;
+  padding: 10px 0 !important;
+}
+
+.columnButton
+{
+  margin-left: 10px;
+}
+
+#divAllColumns
+{
+  border-bottom: 1px solid @border_colour;
+  height: 30px;
+  padding: 3px 0 0 5px;
+}
+
+#divColumns
+{
+  text-align: left;
+  float: left;
+  margin-top: -5px;
+  position: relative;
+  z-index: 500;
+}
+
+#divColumns h3
+{
+  margin: 0 !important;
+}
+
+//////// End Columns Setting Control Styles ////////
+
+//////// Login Control Styles ////////
+
+#pnlAccountNavigation
+{
+  cursor: pointer;
+}
+
+#pnlAccountNavigation ul
+{
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 102px;
+  text-align: left;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  width: 110px;
+  z-index: 1000;
+  background: @background_nohighlight;
+  border: 1px solid @border_colour;
+}
+
+#pnlAccountNavigation ul li
+{
+  line-height: 21px;
+}
+
+#pnlAccountNavigation ul li a
+{
+  font-family: Segoe UI, Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: @menu_link_colour;
+  text-decoration: none;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#pnlAccountNavigation ul li:hover
+{
+  background: @border_colour;
+}
+
+#pnlAccountNavigation ul li:hover a
+{
+  color: @background_nohighlight;
+}
+
+#pnlLoginPanel
+{
+  float:right;
+}
+
+//////// End Login Control Styles ////////
+
+//////// User and Groups Page Styles ////////
+
+#manageUsersAndGroups{
+  overflow:auto;
+}
+
+#usersAndGroups
+{
+  vertical-align: top;
+  width: 40%;
+  margin:1%;
+  float:left
+}
+
+#usersAndGroupDetails
+{
+  vertical-align: top;
+  width: 55%;
+  margin:1%;
+  margin-right: 1%;
+  float:left
+}
+
+#usersAndGroups #divUserTree
+{
+  border-top-style: solid;
+  border-width: 1px;
+  padding-top: 10px;
+}
+
+#usersAndGroups #divGroupSecurityTree
+{
+  overflow: auto;
+}
+
+#usersAndGroups .addButton
+{
+  float: right;
+}
+
+
+#usersAndGroups #divUserTree
+{
+  border-top-style: solid;
+  border-width: 1px;
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+
+#usersAndGroupDetails #childGridHeaderDiv
+{
+  min-height: 15px;
+  height: auto !important;
+  height: 15px;
+}
+
+#usersAndGroupDetails .buttons
+{
+  text-align: right;
+}
+
+#usersAndGroupDetails #divBulkFunctions
+{
+  margin-top: 15px;
+}
+
+#usersAndGroupDetails .usersList
+{
+  width: 270px;
+}
+
+.buttonsSection{
+  overflow:auto;
+}
+
+.buttonsSection .labelMajorHeading
+{
+  width: 40%;
+  font-size: 1.7em;
+  float:left;
+  margin: 0px;
+}
+
+.buttonsSection .labelMinorHeading
+{
+  width: 40%;
+  font-size: 1.2em;
+  float:left;
+  margin: 0px;
+}
+
+.buttonsSection .buttons
+{
+  width: 55%;
+  float:left;
+  margin:0px;
+}
+
+table.RadioButtonList
+{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.RadioButtonList td
+{
+  border-style: none;
+  border: 0px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+//////// End User and Groups Page Styles ////////
+
+.selectedNode
+{
+  background: @instruction_colour;
+}
+
+//// Selected panel header style on SmartTrack Dashboard page
+
+.SelectedDashboardPnl
+{
+  border:solid 1px @border_colour;
+  background: @datatable_hover_background;
+  border-collapse:collapse;
+  border-bottom-style: none;
+  border-bottom: 0px;
+  padding: 2px 10px;
+  text-align: left;
+  -moz-border-radius-topleft: @rounded_radius;
+  -webkit-border-top-left-radius: @rounded_radius;
+  -moz-border-radius-topright: @rounded_radius;
+  -webkit-border-top-right-radius: @rounded_radius;
+}
+
+
+////detailedBaggageTrasactions
+
+
+#detailedBaggageTrasactions{
+  overflow:auto;
+}
+
+#transactionList
+{
+  vertical-align: top;
+  width: 49%;
+  float:left;
+  margin: .5%;
+  overflow:visible;
+}
+
+#transactionDetails
+{
+  vertical-align: top;
+  width: 48%;
+  margin-right: 1%;
+  float:left;
+  margin: .5%;
+}
