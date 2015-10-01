@@ -9,6 +9,7 @@
 * React (https://facebook.github.io/react/)
 * React and .Net (http://reactjs.net/)
 * Flux (http://facebook.github.io/flux/)
+* React hot loader (https://github.com/gaearon/react-hot-loader)
 * ASP.Net API
 
 ## Presentation (this is the original presentation)
