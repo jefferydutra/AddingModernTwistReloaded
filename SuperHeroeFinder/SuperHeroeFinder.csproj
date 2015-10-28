@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -102,6 +110,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="js\library\src\actions\CharacterActionCreators.js" />
     <Content Include="js\library\src\constants\ApiConstants.js" />
@@ -109,6 +118,7 @@
     <Content Include="js\library\src\constants\PayloadSources.js" />
     <Content Include="js\library\src\dispatcher\AppDispatcher.js" />
     <Content Include="js\library\src\stores\CharacterStore.js" />
+    <Content Include="js\library\src\stores\CreateStore.js" />
     <Content Include="js\library\src\utils\CharacterApiUtils.js" />
     <Content Include="js\vendor\bootstrap.js" />
     <Content Include="js\vendor\bootstrap.min.js" />
@@ -120,9 +130,18 @@
     <Content Include="js\vendor\html5shivprintshiv.js" />
     <Content Include=".eslintignore" />
     <Content Include=".eslintrc" />
+    <Content Include="server.js" />
     <Content Include="webpack.config.base.js" />
+    <Content Include="webpack.config.debug.js" />
     <Content Include="webpack.config.development.js" />
     <Content Include="webpack.config.production.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="js\library\src\pages\CharacterAdd.jsx" />
+    <Content Include="js\library\src\pages\CharacterList.jsx" />
+    <Content Include="js\library\src\components\Input.jsx" />
     <None Include="js\vendor\jquery-1.10.2.intellisense.js" />
     <Content Include="js\vendor\jquery-1.10.2.js" />
     <Content Include="js\vendor\jquery-1.10.2.min.js" />
@@ -135,16 +154,21 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CharacterCommandController.cs" />
     <Compile Include="Controllers\CharacterController.cs" />
+    <Compile Include="Controllers\CharacterTypesController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DependencyInjection\PoorMansCompositionRoot.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Character.cs" />
+    <Compile Include="Migrations\201510060018420_Intitial.cs" />
+    <Compile Include="Migrations\201510060018420_Intitial.Designer.cs">
+      <DependentUpon>201510060018420_Intitial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\CharacterService.cs" />
-    <Compile Include="Service\ICharacterService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -172,10 +196,20 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
-    <Folder Include="fonts\" />
     <Folder Include="js\library\src\reactComponents\" />
     <Folder Include="js\library\tests\" />
     <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510060018420_Intitial.resx">
+      <DependentUpon>201510060018420_Intitial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarvelCharacterService\MarvelCharacterService.csproj">
+      <Project>{d874bf2f-13a8-423e-8e0c-4232cedd428d}</Project>
+      <Name>MarvelCharacterService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

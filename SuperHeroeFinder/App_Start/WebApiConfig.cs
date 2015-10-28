@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
+using System.Web.Http.Dispatcher;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using SuperHeroeFinder.DependencyInjection;
 
 namespace SuperHeroeFinder
 {
@@ -12,7 +11,9 @@ namespace SuperHeroeFinder
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            GlobalConfiguration.Configuration.Services.Replace(
+    typeof(IHttpControllerActivator),
+    new PoorMansCompositionRoot());
             // Web API routes
             config.MapHttpAttributeRoutes();
 

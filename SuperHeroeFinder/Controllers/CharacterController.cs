@@ -1,25 +1,26 @@
 ﻿using System.Linq;
 using System.Web.Http;
 using System.Collections.Generic;
-using SuperHeroeFinder.Model;
-using SuperHeroeFinder.Service;
+using MarvelCharacterService.Service;
+using MarvelCharacterService.Models;
 
 namespace SuperHeroeFinder.Controllers
 {
     public class CharacterController : ApiController{
-        private readonly ICharacterService _characterService;
-        public CharacterController(){
-            _characterService = new CharacterService();
+        private readonly ICharacterQueryService _characterQueryService;
+        public CharacterController(ICharacterQueryService characterQueryService)
+        {
+            _characterQueryService = characterQueryService;
         }
 
         public IEnumerable<Character> Get(){
-            return _characterService.GetAll();
+            return _characterQueryService.GetAll();
         }
         public IEnumerable<Character> Get(int id)
         {
-            return _characterService
+            return _characterQueryService
                     .GetAll()
-                    .Where(x => (int)x.CharacterType == id);
+                    .Where(x => x.CharacterType.Id == id);
         }
     }
 }

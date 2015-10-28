@@ -1,9 +1,20 @@
 var React = require('react');
 var App = require('./App.jsx');
+import CharacterActionCreators from '../actions/CharacterActionCreators.js';
+import CharacterAdd from '../pages/CharacterAdd.jsx';
+import CharacterList from '../pages/CharacterList.jsx';
+import {render} from 'react-dom';
+import { Router, Route} from 'react-router';
 
-window.legacy = {};
-window.legacy.loadApp = function(domId) {
-    var container = document.getElementById(domId);
-    React.render(<App />, container);
+CharacterActionCreators.loadAll();
 
-};
+var container = document.getElementById('placeHolder');
+
+render((
+           <Router>
+               <Route path="/" component={App}>
+                   <Route path="add" component={CharacterAdd} />
+                   <Route path="list" component={CharacterList} />
+               </Route>
+           </Router>
+       ), container);

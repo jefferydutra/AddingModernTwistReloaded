@@ -1,12 +1,8 @@
 var AppDispatcher = require('../dispatcher/AppDispatcher');
-var EventEmitter = require('events').EventEmitter;
 var CharacterConstants = require('../constants/CharacterConstants');
-var assign = require('object-assign');
-
-var CHANGE_EVENT = 'change';
+import createStore from './CreateStore.js';
 var _characters = {};
-
-var CharacterStore = assign({}, EventEmitter.prototype, {
+var CharacterStore = createStore({
 
     init(characters) {
         characters.forEach(character => _characters[character.id] = character);
@@ -18,18 +14,6 @@ var CharacterStore = assign({}, EventEmitter.prototype, {
 
     getCharacterCount() {
         return _characters.length;
-    },
-
-    emitChange() {
-        this.emit(CHANGE_EVENT);
-    },
-
-    addChangeListener: function(callback) {
-        this.on(CHANGE_EVENT, callback);
-    },
-
-    removeChangeListener: function(callback) {
-        this.removeChangeListener(CHANGE_EVENT, callback);
     }
 
 });
@@ -38,10 +22,10 @@ AppDispatcher.register(function(payload) {
     var action = payload.action;
 
     switch (action.type) {
-    case CharacterConstants.ActionTypes.RECEIVE_CHARACTERS:
-        CharacterStore.init(action.characters);
-        CharacterStore.emitChange();
-        break;
+        case CharacterConstants.ActionTypes.RECEIVE_CHARACTERS:
+            CharacterStore.init(action.characters);
+            CharacterStore.emitChange();
+            break;
     }
 
 });

@@ -1,4 +1,4 @@
-namespace SuperHeroeFinder.Models{
+namespace MarvelCharacterService.Models{
     public class Character
     {
         public int Id { get; set; }

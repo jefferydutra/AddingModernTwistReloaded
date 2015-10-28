@@ -9,7 +9,7 @@ var config = require('./webpack.config.base');
 module.exports = {
     entry: './js/library/src/components/main.jsx',
     output: {
-        filename: '[name].js',
+        filename: 'App.js',
         pathInfo: true,
         path: path.join(__dirname, 'dist'), //
         publicPath: 'http://localhost:3000/' // Required for webpack-dev-server

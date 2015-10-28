@@ -1,18 +1,20 @@
 var React = require('react');
-var FilterRow = require('./FilterRow.jsx');
-var Statistics = require('./Statistics.jsx');
-var DataGrid = require('./DataGrid.jsx');
-var CharacterActionCreators = require('../actions/CharacterActionCreators');
+import { Link } from 'react-router';
 
-CharacterActionCreators.loadAll();
-
-var App = React.createClass({
+const App = React.createClass({
     render: function() {
         return (
             <div>
-                <FilterRow />
-                <Statistics />
-                <DataGrid />
+                <ul className='list-inline pull-right'>
+                    <li><Link to='/list'>List</Link></li>
+                    <li><Link to='/add'>Add</Link></li>
+                </ul>
+                <div>
+                    <h1>App</h1>
+                </div>
+                <div>
+                    {this.props.children}
+                </div>
             </div>
         );
     }

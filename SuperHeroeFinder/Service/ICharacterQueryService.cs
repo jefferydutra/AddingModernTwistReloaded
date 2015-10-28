@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using SuperHeroeFinder.Model;
+using SuperHeroeFinder.Models;
 
 namespace SuperHeroeFinder.Service{
-    public interface ICharacterService{
+    public interface ICharacterQueryService{
         IEnumerable<Character> GetAll();
     }
 }

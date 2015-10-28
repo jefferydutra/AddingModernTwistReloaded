@@ -26,7 +26,7 @@
     "jsx": true
   },
   "rules": {
-    "valid-jsdoc": 2,
+    "valid-jsdoc": 0,
 
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
@@ -38,6 +38,10 @@
 
     // Disable comma-dangle unless need to support it
     "comma-dangle": 0,
+    "complexity": [
+      2,
+      5
+    ],
     /**
      * Strict mode
      */
@@ -203,8 +207,6 @@
     // http://eslint.org/docs/rules/no-throw-literal
     "no-with": 2,
     // http://eslint.org/docs/rules/no-with
-    "radix": 2,
-    // http://eslint.org/docs/rules/radix
     "vars-on-top": 0,
     // http://eslint.org/docs/rules/vars-on-top
     "wrap-iife": [
@@ -220,7 +222,10 @@
      */
     "indent": [
       2,
-      4
+      4,
+	  {
+	  "SwitchCase": 1
+	  }
     ],
     // http://eslint.org/docs/rules/indent
     "brace-style": [
@@ -269,6 +274,18 @@
         "afterColon": true
       }
     ],
+    "max-depth": [2, 3],
+    "max-nested-callbacks": [
+      2,
+      3
+    ],
+    // http://eslint.org/docs/rules/max-nested-callbacks
+    "max-statements": [
+      2,
+      15
+    ],
+    // http://eslint.org/docs/rules/max-statements
+
     "new-cap": [
       2,
       {
@@ -291,6 +308,16 @@
     // http://eslint.org/docs/rules/no-spaced-func
     "no-trailing-spaces": 2,
     // http://eslint.org/docs/rules/no-trailing-spaces
+    "no-undefined": 2,
+    // http://eslint.org/docs/rules/no-undefined
+    "new-cap": 2,
+    // http://eslint.org/docs/rules/new-cap
+    "no-undef-init": 2,
+    // http://eslint.org/docs/rules/no-undef-init
+
+    "no-use-before-define": 2,
+    // http://eslint.org/docs/rules/no-use-before-define
+
     "no-extra-parens": [
       2,
       "functions"
@@ -334,21 +361,6 @@
     // http://eslint.org/docs/rules/space-infix-ops
     "space-return-throw-case": 2,
     // http://eslint.org/docs/rules/space-return-throw-case
-    "spaced-comment": [
-      2,
-      "always",
-      {
-        // http://eslint.org/docs/rules/spaced-comment
-        "exceptions": [
-          "-",
-          "+"
-        ],
-        "markers": [
-          "=",
-          "!"
-        ]
-        // space here to support sprockets directives
-      }
-    ]
+    "spaced-comment": 0
   }
 }
