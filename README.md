@@ -12,6 +12,10 @@
 * React hot loader (https://github.com/gaearon/react-hot-loader)
 * ASP.Net API
 
-## Presentation (this is the original presentation)
+ Some Great Resources: 
+* awesome-react (https://github.com/enaqx/awesome-react)
+* Hot Reloading with Time Travel at react-europe 2015 (https://www.youtube.com/watch?v=xsSnOQynTHs&feature=youtu.be)
+* React Router at react-europe 2015 (https://www.youtube.com/watch?v=Q6Kczrgw6ic)
+* Don't Rewrite, React! at react-europe 2015 (http://www.youtube.com/watch?v=BF58ZJ1ZQxY)
+* The Case For Flux (https://medium.com/@dan_abramov/the-case-for-flux-379b7d1982c6#.35e2hif8g)
 
-[Slideshare](http://www.slideshare.net/JeffDutra/adding-a-modern-twist-to-legacy-web-applications)
