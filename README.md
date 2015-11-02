@@ -12,7 +12,7 @@
 * React hot loader (https://github.com/gaearon/react-hot-loader)
 * ASP.Net API
 
- Some Great Resources: 
+##Some Great Resources: 
 * awesome-react (https://github.com/enaqx/awesome-react)
 * Hot Reloading with Time Travel at react-europe 2015 (https://www.youtube.com/watch?v=xsSnOQynTHs&feature=youtu.be)
 * React Router at react-europe 2015 (https://www.youtube.com/watch?v=Q6Kczrgw6ic)
