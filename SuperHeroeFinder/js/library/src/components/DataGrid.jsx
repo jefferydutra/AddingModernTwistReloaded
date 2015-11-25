@@ -36,7 +36,7 @@ var DataGrid = React.createClass({
             <table className='table table-striped'>
                 <thead>
                 <tr>
-                    <td>Name</td>
+                    <td># of Comics</td>
                     <td># of Comics</td>
                     <td># of Series</td>
                     <td>Profile Page</td>

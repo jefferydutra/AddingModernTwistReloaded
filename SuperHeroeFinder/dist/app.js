@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d1e51820dc0014a98ab7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7f9cb639b10fc7def2a6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30117,7 +30117,8 @@
 	    getInitialState: function getInitialState() {
 	        return {
 	            name: '',
-	            series: ''
+	            series: '',
+	            typs: ''
 	        };
 	    },
 	    _handleChange: function _handleChange(key, event) {
@@ -30140,11 +30141,12 @@
 	                null,
 	                'Add Character Form'
 	            ),
+	            'Need to add more in',
 	            React.createElement(
 	                'form',
 	                null,
 	                React.createElement(TextInput, {
-	                    label: 'Name:',
+	                    label: 'Name: now',
 	                    isValid: this._nameIsValid,
 	                    handleChange: this._handleChange.bind(null, 'name'),
 	                    value: this.state.name }),
@@ -30152,8 +30154,14 @@
 	                    label: '# of Series:',
 	                    isValid: this._seriesIsValid,
 	                    handleChange: this._handleChange.bind(null, 'series'),
+	                    value: this.state.series }),
+	                React.createElement(TextInput, {
+	                    label: '# o:',
+	                    isValid: this._seriesIsValid,
+	                    handleChange: this._handleChange.bind(null, 'series'),
 	                    value: this.state.series })
-	            )
+	            ),
+	            '>'
 	        );
 	    }
 	});
@@ -30198,7 +30206,7 @@
 
 	    validationState: function validationState() {
 	        if (this.props.isValid()) return 'success';
-	        return 'error';
+	        return 'warning';
 	    },
 
 	    render: function render() {
