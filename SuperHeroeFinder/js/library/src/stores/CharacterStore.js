@@ -2,11 +2,6 @@ var AppDispatcher = require('../dispatcher/AppDispatcher');
 var CharacterConstants = require('../constants/CharacterConstants');
 import createStore from './CreateStore.js';
 var _characters = {};
-
-function addModifyCharacter(character) {
-    _characters[character.id] = character;
-}
-
 var CharacterStore = createStore({
 
     init(characters) {
@@ -29,10 +24,6 @@ AppDispatcher.register(function(payload) {
     switch (action.type) {
         case CharacterConstants.ActionTypes.RECEIVE_CHARACTERS:
             CharacterStore.init(action.characters);
-            CharacterStore.emitChange();
-            break;
-        case CharacterConstants.ActionTypes.RECEIVE_CREATED_CHARACTER:
-            addModifyCharacter(action.character);
             CharacterStore.emitChange();
             break;
     }

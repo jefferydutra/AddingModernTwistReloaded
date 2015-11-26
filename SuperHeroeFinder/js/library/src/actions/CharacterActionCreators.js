@@ -13,17 +13,6 @@ var CharacterActions = {
 
     loadAll: function() {
         CharacterApiUtils.getCharacters(CharacterActions.receiveAll);
-    },
-
-    addCharacter(character) {
-        CharacterApiUtils.postCharacter(character, CharacterActions.receiveCreatedCharacter);
-    },
-
-    receiveCreatedCharacter(character) {
-        AppDispatcher.handleServerAction({
-            type: CharacterConstants.ActionTypes.RECEIVE_CREATED_CHARACTER,
-            character: character
-        });
     }
 
 };

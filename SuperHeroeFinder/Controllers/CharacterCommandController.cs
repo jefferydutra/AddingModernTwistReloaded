@@ -24,7 +24,7 @@ namespace SuperHeroeFinder.Controllers
         {
             var response = await _characterCommandService.Add(request);
 
-            return Ok(response.Character);
+            return CreatedAtRoute("DefaultApi", new { id = response.Character.Id }, response.Character);
         }
         public async Task<IHttpActionResult> Delete(int id)
         {
