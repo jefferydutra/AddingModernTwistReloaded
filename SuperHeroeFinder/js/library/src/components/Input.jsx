@@ -1,4 +1,4 @@
-import React from 'react';
+var React = require('react');
 var Input = require('react-bootstrap').Input;
 
 const TextInput = React.createClass({

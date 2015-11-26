@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "hot": "webpack --progress --colors --config  webpack.config.development.js",
-    "dev-watch": "webpack --progress --colors -w  -d --config  webpack.config.development.js",
+    "dev-watch": "webpack --progress --colors -w  -d --config  webpack.config.debug.js",
     "debug": "webpack --progress --colors -w  -d --config  webpack.config.debug.js",
     "prod": "webpack --config webpack.config.production.js",
     "test": "echo \"Error: no test specified\" && exit 1"
